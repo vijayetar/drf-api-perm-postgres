@@ -1,0 +1,11 @@
+* {
+  padding: 20px;
+  border-radius: 5px;
+}
+body{
+  background-color: cornsilk;
+}
+h1, h2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: purple;
+}
