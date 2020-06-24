@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block link%}
+  <link rel="stylesheet" href={% static "css/reset.css" %}>
+  <link rel="stylesheet" href={% static "css/base.css" %}>
+  {% endblock link%}
+  {% block title %}
+  <title>Document</title>
+  {% endblock title %}
+</head>
+<body>
+  <header>
+  {% block nav_bar %}
+  <nav>
+    <ul>
+      <li><a href="{% url 'item_list' %}">Home</a></li>
+      <li><a href="{% url 'item_list' %}">Admin</a></li>
+    </ul>
+  </nav>
+  {% endblock nav_bar %}
+  </header>
+  <main>
+  {% block content%}
+  <h1>Not the formal document</h1>
+  {% endblock content%}
+  </main>
+</body>
+</html>

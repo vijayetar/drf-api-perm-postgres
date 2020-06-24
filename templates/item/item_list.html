@@ -1,0 +1,11 @@
+{% extends 'item/item_base.html' %}
+{%block content %}
+  <h1> Item List </h1>
+  <ul>
+    {% for obj in object_list %}
+    <li>  <a href = {% url 'item_detail' obj.pk %}> {{obj.item_name}} </a>   by    {{obj.item_purchaser}} at {{obj.item_cost}}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'item_create'%}"><button>+ ADD
+  </button></a>
+{% endblock content %}
