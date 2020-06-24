@@ -1,9 +1,20 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
-from .models import Item
 from django.urls import reverse_lazy
+from rest_framework import generics
+
+from .models import Item
+from .serializers import ItemSerializer
 
 # Create your views here.
+
+class ItemList(generics.ListCreateAPIView):
+  queryset = Item.objects.all()
+  serializer_class = ItemSerializer
+
+class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Item.objects.all()
+  serializer_class = ItemSerializer
 
 class ItemListView(ListView):
   template_name = 'item/item_list.html'

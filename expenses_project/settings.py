@@ -25,7 +25,7 @@ SECRET_KEY = 'n*3k2r2+pi!_bqut2$yy_szv4+h9lzyx606c59oub5q&#^te!f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #local
     'members.apps.MembersConfig',
     'purchases.apps.PurchasesConfig',
+    #3rd party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +132,10 @@ AUTH_USER_MODEL = 'members.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.AllowAny',
+    ]
+
+}
