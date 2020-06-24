@@ -5,6 +5,7 @@ from rest_framework import generics
 
 from .models import Item
 from .serializers import ItemSerializer
+from .permissions import IsPurchaserOrReadOnly
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ class ItemList(generics.ListCreateAPIView):
   serializer_class = ItemSerializer
 
 class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
+  permission_classes = (IsPurchaserOrReadOnly,)
   queryset = Item.objects.all()
   serializer_class = ItemSerializer
 
