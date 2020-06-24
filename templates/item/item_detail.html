@@ -1,0 +1,14 @@
+{% extends 'item/item_base.html' %}
+{%block content %}
+  <h3> Item Details </h3>
+  <ul>
+    <li> Purchaser Name : {{item.item_purchaser}}</li>
+    <li>Item Name: {{item.item_name}}</li>
+    <li>Item Purchase Date: {{item.item_date}}</li>
+    <li>Item Cost: {{item.item_cost}}</li>
+  </ul>
+  <a href="{% url 'item_update' item.pk%}"><button>+ Edit</button></a>
+  <a href="{% url 'item_delete' item.pk%}"><button>- Delete</button></a>
+  <a href="/"><button>HOME
+  </button></a>
+{% endblock content %}

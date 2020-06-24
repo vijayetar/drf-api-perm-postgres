@@ -1,0 +1,17 @@
+{% extends 'item/item_base.html' %}
+{% block content %}
+<form action = "" method ="POST">
+    {% csrf_token %}
+    <ul>
+      <li>Item Purchaser: {{item.item_purchaser}}</li>
+      <li> Item Name : {{item.item_name}}</li>
+      <li>Item Purchase Date: {{item.item_date}}</li>
+      <li>Item Cost: {{item.item_cost}}</li>
+    </ul>
+    <p> Do you really want to delete</p>
+  <input type="submit" value ="Delete">
+</form>
+
+<a href="/"><button>HOME</button></a>
+
+{% endblock content %}
